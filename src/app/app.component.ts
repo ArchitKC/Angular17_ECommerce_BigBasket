@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Angular17_ECommerce_BigBasket';
+  title = 'Big Basket - NG17';
 }
