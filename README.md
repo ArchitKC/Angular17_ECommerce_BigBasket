@@ -29,19 +29,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## YouTube link:
 
-[YOUTUBE 1] https://www.youtube.com/watch?v=hejR2GfFXiA&ab_channel=LEARNINGPARTNER
-[YOUTUBE 2] https://www.youtube.com/watch?v=tlQS-XN1f8w&ab_channel=LEARNINGPARTNER
-[YOUTUBE 3] https://www.youtube.com/watch?v=ng0iVSbgo8o&ab_channel=LEARNINGPARTNER
+[YOUTUBE 1](https://www.youtube.com/watch?v=hejR2GfFXiA&ab_channel=LEARNINGPARTNER)
 
-GitHub:
+[YOUTUBE 2](https://www.youtube.com/watch?v=tlQS-XN1f8w&ab_channel=LEARNINGPARTNER)
 
-[GITHUB] https://github.com/voidChetan/bigbasket_ecommerce_angular/tree/main
+[YOUTUBE 3](https://www.youtube.com/watch?v=ng0iVSbgo8o&ab_channel=LEARNINGPARTNER)
+
+[GitHub](https://github.com/voidChetan/bigbasket_ecommerce_angular/tree/main)
 
 BackEnd Service:
+[API_END_POINT](https://freeapi.gerasim.in/api/BigBasket/)
 
-[API_END_POINT] 'https://freeapi.gerasim.in/api/BigBasket/',
-[API_END_POINT_USER] 'http://freeapi.gerasim.in/api/User/',
+[API_END_POINT_USER](http://freeapi.gerasim.in/api/User/)
 
 Swagger:
 
-https://freeapi.gerasim.in/index.html --> [BigBasket]
+[BigBasket](https://freeapi.gerasim.in/index.html)
