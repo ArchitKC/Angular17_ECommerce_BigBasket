@@ -26,6 +26,6 @@ export class ProductService {
   }
 
   deleteProduct(id: number):Observable<any>{
-    return this.httpClient.delete<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.DELETE_PRODUCT + id);
+    return this.httpClient.get<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.DELETE_PRODUCT + id);
   }
 }

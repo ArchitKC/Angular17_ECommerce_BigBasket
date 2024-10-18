@@ -83,14 +83,17 @@ export class ProductsComponent {
   }
 
   onDeleteProductItem(item:any) {
-    this.productService.deleteProduct(item.productId).subscribe((res: any)=>{
-      if(res.result){
-        alert("Product deleted successfully");
-        this.getAllProducts();
-      }else{
-        alert("Failed to delete product");
-      }
-    })
+    const isDelete = confirm("Are you sure you want to delete this product?");
+    if(isDelete){
+      this.productService.deleteProduct(item.productId).subscribe((res: any)=>{
+        if(res.result){
+          alert("Product deleted successfully");
+          this.getAllProducts();
+        }else{
+          alert("Failed to delete product");
+        }
+      })
+    }
   }
 
   onEditProductItem(item:any) {
