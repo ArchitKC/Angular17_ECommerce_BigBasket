@@ -1,1 +1,270 @@
-/* You can add global styles to this file, and also import other style files */
+@layer reset, primeng;
+
+@layer reset {
+  button {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cultured) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #9aa5ba !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #80868B !important;
+}
+
+.content {
+  padding-bottom: 20px !important;
+  z-index: 9999;
+}
+
+.textBlur {
+  color: transparent;
+  text-shadow: 0 0 1px #202122;
+}
+
+.bg-primary {
+  background-color: #81c408 !important;
+}
+
+.display-4 {
+  font-size: calc(1.475rem + 2.7vw) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  color: #81c408 !important;
+}
+
+.empty {
+  font-size: 40px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  color: #81c408 !important;
+  text-align: center !important;
+}
+
+.navbar {
+  box-shadow: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+  margin-top: 0;
+}
+
+.log_Reg_Border {
+  border: 1px solid pink;
+  border-radius: 20%;
+  margin-left: 10px;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+.box-shadow {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-fluid {
+  height: 200px !important;
+  width: 100% !important;
+  margin-top: 0% !important;
+}
+
+.featurs .featurs-item .featurs-icon {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.bg-light {
+  background-color: #f4f6f8 !important;
+}
+
+.featurs .featurs-item .featurs-icon::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  background: var(--bs-secondary);
+  position: absolute;
+  bottom: -10px;
+  transform: translate(-50%);
+  transform: rotate(45deg);
+  background: var(--bs-secondary);
+}
+
+.text-primary {
+  color: #81c408 !important;
+}
+
+.px-3 {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.border-secondary {
+  border-color: #ffb524 !important;
+}
+
+.nav-yellow {
+  background-color: #81c408 !important;
+}
+
+.menuOnLeft {
+  background-color: #f9f9f9;
+  width: 280px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  left: auto;
+  right: 0px;
+}
+
+.menuOnLeft2 {
+  background-color: #f9f9f9;
+  width: 280px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  left: auto;
+  right: 100px;
+}
+
+.closeBtn {
+  font-size: 25px;
+  color: black;
+  margin: 0px 0px 0px 0px;
+  border: none;
+}
+
+#checkout {
+  background-color: transparent;
+  background-image: linear-gradient(226.69deg, #E5F8FF8C 38.63%, #F9E0B014 82.88%);
+}
+
+@media (min-width:375px) {
+  .productHeading ul {
+    flex-direction: column;
+  }
+}
+
+/* login */
+img {
+  margin: 0 auto;
+  display: block;
+  margin-top: 20%;
+}
+
+.validation-error {
+  color: #DC2626 !important;
+  font-size: 13px;
+}
+
+input.form-control {
+  height: 36px !important;
+}
+
+select.form-select {
+  height: 36px !important;
+}
+
+.p-button {
+  margin-right: 0.5rem !important;
+  border-radius: 6px;
+  cursor: pointer !important;
+}
+
+.p-button.p-button-sm {
+  font-size: 0.875rem;
+  padding: 4px 12px 4px 12px;
+}
+
+.p-dialog-footer .p-confirm-dialog-reject {
+  background: #eb2f2f;
+  border: none;
+  padding: 7px 20px 7px 20px !important;
+}
+
+.p-dialog-footer .p-confirm-dialog-reject:hover {
+  background: #DC2626 !important;
+}
+
+.p-dialog-footer .p-confirm-dialog-accept {
+  background: #19a262;
+  border: none;
+  padding: 7px 20px 7px 20px !important;
+}
+
+.p-dialog-footer .p-confirm-dialog-accept:hover {
+  background: #0f8b51 !important;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #6b7280;
+  border: 0 none;
+  background: transparent !important;
+  border-radius: 50% !important;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s !important;
+  margin-right: 0.5rem;
+}
+
+.p-checkbox .p-checkbox-box {
+  width: 19px;
+  height: 19px;
+}
+
+.p-checkbox .p-checkbox-icon {
+  font-size: 11px !important;
+}
+
+.p-checkbox-label {
+  margin: -7px 0px 0px 0px !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border-color: #fff;
+  background: #81C408 !important;
+}
+
+.p-checkbox .p-checkbox-box .p-checkbox-icon {
+  color: black !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+}
+
+.p-datatable.p-datatable-sm .p-datatable-thead>tr>th {
+  padding: 5px 5px 5px 5px !important;
+  background-color: #343A40 !important;
+  color: #fff;
+}
+
+.p-datatable.p-datatable-sm .p-datatable-tbody>tr>td {
+  padding: 5px 5px 5px 8px !important;
+  color: rgba(0, 0, 0, 0.815);
+}
+
+.p-datatable .p-datatable-thead>tr>th {
+  background: #f6f6f6 !important;
+}
+
+.p-datatable .p-datatable-tbody>tr:hover {
+  cursor: pointer;
+}
+
+.button-cell {
+  white-space: nowrap;
+}

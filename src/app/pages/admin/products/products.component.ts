@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ProductService } from '../../services/product/product.service';
+import { FormsModule } from '@angular/forms'; 
+import { Category } from '../../../services/constant/interfaces';
+import { ProductService } from '../../../services/product/product.service';
 
 @Component({
   selector: 'app-products',
@@ -30,7 +31,7 @@ export class ProductsComponent {
     "productImageUrl": "",
   }
 
-  categoryList: any[] = [];
+  categoryList: Category[] = [];
   productList: any[] = [];
 
   constructor(private productService: ProductService) { }
@@ -41,7 +42,7 @@ export class ProductsComponent {
   }
 
   getAllCategories() {
-    this.productService.getAllCategories().subscribe((res: any) => {
+    this.productService.getAllCategories().subscribe((res: {data:Category[]}) => {
       this.categoryList = res.data;
     })
   }
