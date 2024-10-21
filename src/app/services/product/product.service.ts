@@ -1,3 +1,4 @@
+import { Category } from '../constant/interfaces';
 import { ConstantUrls } from './../constant/constant';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -14,8 +15,8 @@ export class ProductService {
     return this.httpClient.get<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.GET_ALL_PRODUCT);
   }
 
-  getAllCategories():Observable<any[]> {
-    return this.httpClient.get<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.GET_ALL_CATEGORY);
+  getAllCategories():Observable<{ data: Category[] }> {
+    return this.httpClient.get<{ data: Category[] }>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.GET_ALL_CATEGORY);
   }
 
   saveProduct(obj: any):Observable<any>{
