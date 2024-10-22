@@ -2,12 +2,15 @@ import { Category } from '../constant/interfaces';
 import { ConstantUrls } from './../constant/constant';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+
+
+  searchBox: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor(private httpClient: HttpClient, ) { }
 

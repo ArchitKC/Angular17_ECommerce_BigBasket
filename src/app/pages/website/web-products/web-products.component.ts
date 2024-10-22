@@ -38,8 +38,7 @@ export class WebProductsComponent {
     this.productService.getAllCategories().subscribe({
       next: (res: { data: Category[] }) => { 
         res.data.forEach(category => {
-          if(category.parentCategoryId == 0) {
-            console.log('Main Category:', category);
+          if(category.parentCategoryId == 0) { 
             this.categoryList.push(category);
           }
         }); 
