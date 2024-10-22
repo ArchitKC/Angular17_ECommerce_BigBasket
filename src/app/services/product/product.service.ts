@@ -32,4 +32,9 @@ export class ProductService {
   deleteProduct(id: number):Observable<any>{
     return this.httpClient.get<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.DELETE_PRODUCT + id);
   }
+
+  save_update_Catergory(obj: any):Observable<any>{
+    return this.httpClient.post<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.CREATE_NEW_CATEGORY, obj);
+  }
+
 }

@@ -45,31 +45,22 @@ export class LandingComponent {
   }
 
   buildCategoryTree(categories: Category[]): Category[] {
-    debugger;
     const categoryMap = new Map<number, Category>();
-
-    // Create a map of categoryId -> category
-    categories.forEach(category => categoryMap.set(category.categoryId, category));
-
-    // Initialize the tree
     const tree: Category[] = [];
 
-    // Loop through categories and assign children to their respective parents
+    // Loop through categories and populate the map and tree in one pass
     categories.forEach(category => {
-      if (category.parentCategoryId == 0) {
-        // If no parent, it's a root category
-        tree.push(category);
-      } else {
-        // If it has a parent, add it to the parent's children array
-        const parent = categoryMap.get(category.parentCategoryId);
-        if (parent) {
-          if (!parent.children) {
-            parent.children = [];
-          }
-          parent.children.push(category);
+        categoryMap.set(category.categoryId, category);
+        
+        if (category.parentCategoryId === 0) {
+            // It's a root category
+            tree.push(category);
+        } else {
+            // It's a child category, add it to the parent's children array
+            const parent = categoryMap.get(category.parentCategoryId);
+            parent?.children ? parent.children.push(category) : parent!.children = [category];
         }
-      }
-    }); 
+    });
     return tree;
   }
   

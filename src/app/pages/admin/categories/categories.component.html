@@ -41,7 +41,7 @@
                                                 (click)="onEdit(item)">Edit</button>
                                             <button pButton pRipple
                                                 class="p-button-danger p-button-sm"
-                                                (click)="onDelete()">Delete</button>
+                                                (click)="onDelete(item)">Delete</button>
                                         </td>
                                     </tr>
                                 </ng-template>
@@ -90,6 +90,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="fw-semibold my-1">Parent Category</label>
+                                <select [(ngModel)]="categoryObj.parentCategoryId"
+                                    class="form-select" name="parentCategoryId"
+                                    #parentCategoryId="ngModel"
+                                    required>
+                                    <option value="null" disabled>Select
+                                        Category</option>
+                                    <option *ngFor="let cate of products$ |async"
+                                        [value]="cate.categoryId">
+                                        {{cate.categoryName}}</option>
+                                </select> 
+                            </div>
+                        </div>
                         <div class="row mt-3">
                             <div class="col-md-12 text-center">
                                 <button pButton pRipple
@@ -116,4 +131,4 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
