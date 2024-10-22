@@ -1,0 +1,39 @@
+a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+a:hover {
+  color: black !important;
+}
+
+.incDecBtn {
+  background-color: #81C408;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900 !important;
+}
+
+.incDecBtn:focus {
+  background-color: #81C408;
+  color: #fff;
+}
+
+.customIncDecInput {
+  text-align: center;
+  width: 30% !important;
+  border: none;
+  outline: none !important;
+  color: gray;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.spinnerColor {
+  color: #81C408 !important;
+}

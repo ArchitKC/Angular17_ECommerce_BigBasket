@@ -1,9 +1,8 @@
 {
-    "/api": {
-      "target": "https://freeapi.gerasim.in",
-      "secure": true,
-      "changeOrigin": true,
-      "logLevel": "debug"
-    }
+  "/api": {
+    "target": "https://freeapi.gerasim.in",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
-  
+}

@@ -14,12 +14,13 @@
           <a class="nav-link" routerLink="/category">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/AllProducts">Admin Page</a>
+          <a class="nav-link" href="/AllProducts">Shopping Site</a>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
+        <input class="form-control me-2" type="search" name="search" [(ngModel)]="searchTxt" (input)="onInput($event)"
+          placeholder="Search">
+        <button class="btn btn-primary" type="button" (click)="onFilter()">Search</button>
       </form>
     </div>
   </div>

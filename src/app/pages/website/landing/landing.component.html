@@ -20,7 +20,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0  text-center ">
                     <li class="nav-item">
                         <a
-                            class="nav-link fw-semibold text-uppercase text-black me-1 hand" routerLink="/products">Product</a>
+                            class="nav-link fw-semibold text-uppercase text-black me-1 hand" routerLink="/products">Admin Page</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a
@@ -34,6 +34,26 @@
                             <li><a class="dropdown-item" *ngFor="let category of categoriesList">{{category.categoryName}}</a></li>
                         </ul>
                     </li>
+                    <!-- TODO TREE STYLING FOR MENU -->
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-semibold text-uppercase me-1" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ng-container *ngFor="let category of categoryTree">
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">{{ category.categoryName }}</a>
+                                    <ul class="dropdown-menu">
+                                        <ng-container *ngFor="let subCategory of category.children">
+                                            <li>
+                                                <a class="dropdown-item">{{ subCategory.categoryName }}</a>
+                                            </li>
+                                        </ng-container>
+                                    </ul>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </li> -->
                     <li class="nav-item dropdown">
                         <a
                             class="nav-link dropdown-toggle redHover fw-semibold text-uppercase text-black me-1"
@@ -209,3 +229,6 @@
         </div>
     </nav>
 </header>
+<div class="content">
+    <router-outlet></router-outlet>
+  </div>
