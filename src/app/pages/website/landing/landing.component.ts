@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Category } from '../../../services/constant/interfaces';
 import { ProductService } from '../../../services/product/product.service';
 
@@ -13,6 +13,7 @@ import { ProductService } from '../../../services/product/product.service';
     CommonModule,
     DialogModule,
     FormsModule,
+    RouterOutlet,
     RouterLink
   ],
   templateUrl: './landing.component.html',

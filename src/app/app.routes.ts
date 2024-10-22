@@ -5,6 +5,7 @@ import { ProductsComponent } from './pages/admin/products/products.component';
 import { WebProductsComponent } from './pages/website/web-products/web-products.component';
 import { CategoriesComponent } from './pages/admin/categories/categories.component';
 import { LayoutComponent } from './pages/admin/layout/layout.component';
+import { CategoryProductsComponent } from './pages/website/category-products/category-products.component';
 
 export const routes: Routes = [
     { 
@@ -17,17 +18,30 @@ export const routes: Routes = [
         component: LoginComponent
     },
     {
-        path: 'AllProducts',
+        path: '',
         component: LandingComponent,
         children: [
-            {path: 'AllProducts', component: WebProductsComponent},
+            {
+                path: 'AllProducts', 
+                component: WebProductsComponent
+            },
+            {
+                path:'category/:categoryId', 
+                component: CategoryProductsComponent
+            }
         ]
     },
     { 
         path: '', 
         component: LayoutComponent, 
         children: [
-            {path: 'products', component: ProductsComponent},
-            {path: 'category', component: CategoriesComponent}
+            {
+                path: 'products', 
+                component: ProductsComponent
+            },
+            {
+                path: 'category', 
+                component: CategoriesComponent
+            }
         ]}, 
 ];
