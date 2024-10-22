@@ -37,9 +37,6 @@ export class LandingComponent {
       },
       error:(error)=>{
         console.log('Error Fetching categories', error);
-      },
-      complete:()=>{
-        console.log('Categories fetched successfully');
       }
     });
   }

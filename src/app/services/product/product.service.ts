@@ -2,14 +2,12 @@ import { Category } from '../constant/interfaces';
 import { ConstantUrls } from './../constant/constant';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-
   searchBox: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor(private httpClient: HttpClient, ) { }
@@ -37,4 +35,7 @@ export class ProductService {
     return this.httpClient.post<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.CREATE_NEW_CATEGORY, obj);
   }
 
+  getOffers(): Observable<any[]> { 
+    return this.httpClient.get<any[]>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.GET_ALL_OFFERS).pipe(map((res: any) => res.data));
+  }
 }

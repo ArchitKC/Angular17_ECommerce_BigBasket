@@ -35,7 +35,7 @@ export class ProductsComponent {
   filteredProductsList: any[] = [];
   isApiCallInProgress: boolean = false;
 
-  productObj: productObject= new productObject();
+  productObj: productObject = new productObject();
 
   categoryList: Category[] = [];
   productList: any[] = [];
@@ -109,7 +109,7 @@ export class ProductsComponent {
       this.productService.updateProduct(this.productObj).subscribe((res: any) => {
         if (res.result) {
           this.isApiCallInProgress = false;
-          this.toastr.success("Product updated Successfully"); 
+          this.toastr.success("Product updated Successfully");
           this.getAllProducts();
           this.closeProductModal();
         } else {
@@ -144,5 +144,15 @@ export class ProductsComponent {
   onPageChange(event: any) {
     this.first = event.first;
     this.rows = event.rows;
+    // Ensure that the first index is within bounds of the filtered list
+    if (this.first >= this.filteredProductsList.length) {
+      this.first = Math.max(0, this.filteredProductsList.length - this.rows);
+    }
+  }
+
+  ngOnChanges(): void { 
+    if (this.first >= this.filteredProductsList.length) {
+      this.first = 0;
+    }
   }
 }

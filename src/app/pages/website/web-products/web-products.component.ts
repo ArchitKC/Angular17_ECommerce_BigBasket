@@ -1,30 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProductService } from '../../../services/product/product.service';
 import { CommonModule } from '@angular/common';
 import { ItemCardComponent } from '../../../shared/components/item-card/item-card.component';
 import { Category } from '../../../services/constant/interfaces';
+import { Observable } from 'rxjs';
+import { OfferCardComponent } from '../../../shared/components/offer-card/offer-card.component';
 
 @Component({
   selector: 'app-web-products',
   standalone: true,
   imports: [
     CommonModule,
-    ItemCardComponent
+    ItemCardComponent,
+    OfferCardComponent
   ],
   templateUrl: './web-products.component.html',
   styleUrl: './web-products.component.css'
 })
 export class WebProductsComponent {
+  // @ViewChild('productContainer') productContainer!: ElementRef;
   productList: any[] = [];
   productsToShow: any[] = [];
   currentIndex = 0;
   categoryList: Category[] = [];
+  offers$: Observable<any[]> | undefined;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getAllProducts();
     this.getAllCategories();
+    this.offers$ = this.productService.getOffers();
   }
 
   getAllProducts() {
@@ -45,9 +51,6 @@ export class WebProductsComponent {
       },
       error: (error) => {
         console.log('Error Fetching categories', error);
-      },
-      complete: () => {
-        console.log('Categories fetched successfully');
       }
     })
   }

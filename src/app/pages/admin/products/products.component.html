@@ -8,7 +8,8 @@
                             <h5>Product List</h5>
                         </div>
                         <div class="col-md-6 text-end">
-                            <button class="btn btn-sm btn-success" (click)="openProductModal()">New</button>
+                            <button class="btn btn-sm btn-success"
+                                (click)="openProductModal()">New</button>
                         </div>
                     </div>
                 </div>
@@ -35,8 +36,11 @@
                                                     [title]="product.productShortName">{{product.productShortName
                                                     | titlecase
                                                     | truncate}}</h5>
-                                                <p class="card-text">{{product.categoryName}}</p>
-                                                <p class="card-text">{{product.productPrice | currency : 'INR'}}</p>
+                                                <p
+                                                    class="card-text">{{product.categoryName}}</p>
+                                                <p
+                                                    class="card-text">{{product.productPrice
+                                                    | currency : 'INR'}}</p>
                                                 <button pButton pRipple
                                                     class="p-button-primary p-button-sm me-2"
                                                     (click)="onEditProductItem(product)">Edit</button>
@@ -48,11 +52,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <p-paginator [first]="first" [rows]="rows"
+                            <p-paginator
+                                [first]="first"
+                                [rows]="rows"
                                 [totalRecords]="filteredProductsList.length"
                                 (onPageChange)="onPageChange($event)"
                                 [showJumpToPageDropdown]="true"
-                                [showPageLinks]="false"></p-paginator>
+                                [showPageLinks]="false">
+                            </p-paginator>
                         </ng-container>
                         <ng-container *ngIf="filteredProductsList.length == 0">
                             <div class="col-md-12 text-center">
@@ -218,7 +225,8 @@
                             </button>
                             <button pButton pRipple
                                 class="p-button-warning p-button-sm"
-                                label="Update Product" (click)="onUpdateProduct()"
+                                label="Update Product"
+                                (click)="onUpdateProduct()"
                                 *ngIf="productObj.productId !== 0">
                                 <span *ngIf="isApiCallInProgress"
                                     class="spinner-border spinner-border-sm me-2"></span>
