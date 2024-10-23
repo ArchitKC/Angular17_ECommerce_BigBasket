@@ -244,7 +244,7 @@ export class LandingComponent {
           this.isApiCallInProgress = false; 
           this.closeProfileModal();
           this.getCustomerByCustomerId();
-          this.toastr.error(res.message, 'Profile Updated Successfully');
+          this.toastr.success(res.message, 'Profile Updated Successfully');
         } else {
           this.isApiCallInProgress = false;
           this.toastr.error(res.message, 'Response Error');
@@ -282,7 +282,31 @@ export class LandingComponent {
       this.registerForm.resetForm();
   }
 
-  register(registerForm: NgForm) { }
+  register(registerForm: NgForm) { 
+    if(registerForm.valid){    
+      if(!this.isApiCallInProgress){
+        this.isApiCallInProgress = true;
+        this.loginService.registerCustomer(this.registerObj).subscribe((res: any) => {
+          if (res.result) {
+            this.isApiCallInProgress = false;
+            this.loggedInObj = res.data
+            this.toastr.success('Registration Successful', 'Success');
+            this.closeRegisterModal();
+          } else {
+            this.toastr.error(res.message, 'Response Error');
+            this.isApiCallInProgress = false;
+          }
+        }, (error :any) => {
+          this.toastr.error(error.message, 'Error');
+          this.isApiCallInProgress = false;
+        });
+      }
+    } else {
+      Object.values(registerForm.controls).forEach(control => {
+        control.markAsTouched();
+      });
+    }
+  }
 
   onEyeClick() {
     this.showLoginPassword = !this.showLoginPassword;

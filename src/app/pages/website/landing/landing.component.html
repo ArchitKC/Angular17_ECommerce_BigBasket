@@ -450,7 +450,7 @@
                         <input type="tel" class="form-control" name="mobileNo"
                             #mobileNo="ngModel" [pattern]="phonePattern"
                             [(ngModel)]="profileObj.mobileNo" required
-                            pInputText placeholder="Enter Mobile No">
+                            pInputText placeholder="Enter Mobile No" readonly disabled="true">
                         <div class="validation-error"
                             *ngIf="mobileNo.touched || mobileNo.dirty">
                             <div *ngIf="mobileNo.errors?.['required']">Mobile

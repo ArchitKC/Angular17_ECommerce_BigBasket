@@ -66,24 +66,17 @@ export class WebProductsComponent {
     })
   }
 
-  addToCart(product: any) { 
-    const addToCartObj = {
-          "cartId": 0,
-          "custId": 1,
-          "productId": product.productId,
-          "quantity": product.quantity || 1,
-          "addedDate": new Date()
-        };
-    // const localData = sessionStorage.getItem('bigBasket_user');
-    // if (localData !== null) {
-    //   this.loggedInObj = JSON.parse(localData);
-    //   const addToCartObj = {
-    //     "cartId": 0,
-    //     "custId": this.loggedInObj.custId,
-    //     "productId": product.productId,
-    //     "quantity": product.quantity || 1,
-    //     "addedDate": new Date()
-    //   };
+  addToCart(product: any) {  
+    const localData = sessionStorage.getItem('bigBasket_user');
+    if (localData !== null) {
+      this.loggedInObj = JSON.parse(localData);
+      const addToCartObj = {
+        "cartId": 0,
+        "custId": this.loggedInObj.custId,
+        "productId": product.productId,
+        "quantity": product.quantity || 1,
+        "addedDate": new Date()
+      };
       if (!product.isAddToCartApiCallInProgress) {
         product.isAddToCartApiCallInProgress = true;
         this.productService.addToCart(addToCartObj).subscribe((res:any) => {
@@ -102,7 +95,7 @@ export class WebProductsComponent {
       }else {
         this.toastr.warning("Please Login To Add Product");
       }
-    // }
+    }
   }
 
   getQuantity(product: any): number {
