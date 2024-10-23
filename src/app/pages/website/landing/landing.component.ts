@@ -85,7 +85,7 @@ export class LandingComponent {
         this.categoriesList = res.data.filter((list: any) => list.parentCategoryId === 0);; // Accessing categories array from res.data
       },
       error: (error) => {
-        console.log('Error Fetching categories', error);
+        this.toastr.error('Error Fetching categories', error); 
       }
     });
   }
@@ -135,8 +135,7 @@ export class LandingComponent {
         this.productService.getAllCategories().subscribe((res: any) => {
           const subcategories = res.data.filter((list: any) => list.parentCategoryId === parentCategory.categoryId);
           // Update the corresponding parent category with subcategories
-          parentCategory.subcategories = subcategories;
-          console.log(subcategories);
+          parentCategory.subcategories = subcategories; 
         });
       }, 100);
     }
@@ -150,7 +149,11 @@ export class LandingComponent {
   }
 
   removeCartItem(cartId: number) {
-    console.log(cartId);
+    this.productService.removeProductByCartId(cartId).subscribe((res: any) => {
+      this.getCartByCustomerId(this.loggedInObj.custId);
+      this.productService.cartUpdated$.next(true);
+      this.toastr.info(res.message);
+    });
   }
 
   calculateTotalSubtotal() {

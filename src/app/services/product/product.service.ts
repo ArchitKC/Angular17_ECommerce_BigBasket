@@ -51,4 +51,8 @@ export class ProductService {
   getCartItemByCustomerId(customerId: number): Observable<any[]>{
     return this.httpClient.get<any[]>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.GET_CART_BY_CUST + customerId);
   }
+
+  removeProductByCartId(customerId:number): Observable<any>{
+    return this.httpClient.get<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.REMOVE_CART + customerId);
+  }
 }
