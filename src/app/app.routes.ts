@@ -10,6 +10,7 @@ import { CartComponent } from './pages/admin/cart/cart.component';
 import { CheckoutComponent } from './pages/website/checkout/checkout.component';
 import { CustomerOrdersComponent } from './pages/website/customer-orders/customer-orders.component';
 import { ErrorComponent } from './pages/website/error/error.component';
+import { authGuard } from './shared/guard/auth.guard';
 
 export const routes: Routes = [
     {
@@ -29,10 +30,10 @@ export const routes: Routes = [
                 path: 'AllProducts',
                 component: WebProductsComponent
             },
-            // {
-            //     path: 'category/:categoryId',
-            //     component: CategoryProductsComponent
-            // },
+            {
+                path: 'categoryProducts/:categoryId',
+                component: CategoryProductsComponent
+            },
             {
                 path: 'cart',
                 component: CartComponent
@@ -42,13 +43,13 @@ export const routes: Routes = [
     {
         path: 'checkout',
         component: CheckoutComponent,
-        //   canActivate: [authGuard],
+          canActivate: [authGuard],
         title: 'Checkout'
     },
     {
         path: 'order-history',
         component: CustomerOrdersComponent,
-        //   canActivate: [authGuard],
+          canActivate: [authGuard],
         title: 'Your Orders'
     },
     {

@@ -4,6 +4,7 @@ export interface Category{
   parentCategoryId : number;
   userId: number;
   children?: Category[];
+  subcategories?:any;
 }
 
 
