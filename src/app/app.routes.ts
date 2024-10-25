@@ -43,13 +43,13 @@ export const routes: Routes = [
     {
         path: 'checkout',
         component: CheckoutComponent,
-          canActivate: [authGuard],
+        canActivate: [authGuard],
         title: 'Checkout'
     },
     {
         path: 'order-history',
         component: CustomerOrdersComponent,
-          canActivate: [authGuard],
+        canActivate: [authGuard],
         title: 'Your Orders'
     },
     {
@@ -65,10 +65,10 @@ export const routes: Routes = [
                 component: CategoriesComponent
             }
         ]
-    }, 
-    { 
-        path: '**', 
-        pathMatch: 'full',  
-        component: ErrorComponent 
-    }, 
+    },
+    {
+        path: '**',
+        pathMatch: 'full',
+        component: ErrorComponent
+    },
 ];

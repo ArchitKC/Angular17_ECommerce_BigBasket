@@ -55,4 +55,8 @@ export class ProductService {
   removeProductByCartId(customerId:number): Observable<any>{
     return this.httpClient.get<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.REMOVE_CART + customerId);
   }
+
+  placeOrderInCart(obj: any): Observable<any>{
+    return this.httpClient.post<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.PLACE_ORDER, obj);
+  }
 }
