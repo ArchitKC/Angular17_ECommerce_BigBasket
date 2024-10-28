@@ -167,9 +167,13 @@
                                             </div>
                                             <div
                                                 class="d-flex justify-content-evenly mt-2">
-                                                <button
-                                                    class="btn btn-dark rounded-0 px-3">
-                                                    View Cart</button>
+                                                <a routerLink="/customerCart" [queryParams]="{ showCheckOut: true }"
+                                                    routerLinkActive="router-link-active">
+                                                    <button
+                                                        class="btn btn-dark rounded-0 px-3">
+                                                        View Cart
+                                                    </button></a>
+
                                                 <a routerLink="/checkout"
                                                     routerLinkActive="router-link-active">
                                                     <button
@@ -450,7 +454,8 @@
                         <input type="tel" class="form-control" name="mobileNo"
                             #mobileNo="ngModel" [pattern]="phonePattern"
                             [(ngModel)]="profileObj.mobileNo" required
-                            pInputText placeholder="Enter Mobile No" readonly disabled="true">
+                            pInputText placeholder="Enter Mobile No" readonly
+                            disabled="true">
                         <div class="validation-error"
                             *ngIf="mobileNo.touched || mobileNo.dirty">
                             <div *ngIf="mobileNo.errors?.['required']">Mobile

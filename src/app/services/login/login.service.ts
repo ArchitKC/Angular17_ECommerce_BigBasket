@@ -17,15 +17,15 @@ export class LoginService {
   }
 
   logOut(loggedInObj: any) {
-    // this.confirmationService.confirm({
-    //   message: 'Are you sure that you want log out?',
-    //   accept: () => {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want log out?',
+      accept: () => {
         loggedInObj = {};
         sessionStorage.removeItem('bigBasket_user');
         sessionStorage.removeItem('token');
         this.toastr.success('You have been logged out', 'Thank you');
-    //   }
-    // });
+      }
+    });
   }
 
   registerCustomer(registerObj:any){
