@@ -7,6 +7,7 @@ import { Category } from '../../../services/constant/interfaces';
 import { ProductService } from '../../../services/product/product.service';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { FooterComponent } from '../footer/footer.component';
 import { loginObject, registerObject, userLoginObject, userProfileObject } from '../../../services/constant/loginInterfaceClass';
 import { ToastrService } from 'ngx-toastr';
@@ -23,7 +24,8 @@ import { LoginService } from '../../../services/login/login.service';
     RouterLink,
     FooterComponent,
     CheckboxModule,
-    ButtonModule
+    ButtonModule,
+    ConfirmDialogModule
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'

@@ -11,6 +11,7 @@ import { CheckoutComponent } from './pages/website/checkout/checkout.component';
 import { CustomerOrdersComponent } from './pages/website/customer-orders/customer-orders.component';
 import { ErrorComponent } from './pages/website/error/error.component';
 import { authGuard } from './shared/guard/auth.guard';
+import { CustomerCartComponent } from './pages/website/customer-cart/customer-cart.component';
 
 export const routes: Routes = [
     {
@@ -45,6 +46,11 @@ export const routes: Routes = [
         component: CheckoutComponent,
         canActivate: [authGuard],
         title: 'Checkout'
+    },{
+        path:'customerCart',
+        component: CustomerCartComponent,
+        canActivate:[authGuard],
+        title:'Customer Cart'
     },
     {
         path: 'order-history',

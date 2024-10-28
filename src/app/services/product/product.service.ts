@@ -59,4 +59,17 @@ export class ProductService {
   placeOrderInCart(obj: any): Observable<any>{
     return this.httpClient.post<any>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.PLACE_ORDER, obj);
   }
+
+  getAllSalesByCustomerId(customerId:number):Observable<any[]>{
+    return this.httpClient.get<any[]>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.GET_ALL_SALE_BY_CUSTOMER_ID+customerId);
+  }
+
+  cancelOrderBySaleId(saleId:number):Observable<any[]>{
+    return this.httpClient.get<any[]>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.CANCEL_ORDER_BY_SALE_ID+saleId);
+  }
+
+  openSaleBySaleId(saleId: number):Observable<any[]>{
+    return this.httpClient.get<any[]>(ConstantUrls.API_END_POINT + ConstantUrls.METHODS.OPEN_SALE_BY_SALE_ID+saleId);
+  }
+ 
 }

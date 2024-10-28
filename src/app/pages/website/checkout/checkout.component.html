@@ -28,11 +28,16 @@
                                 <input type="text" placeholder="Enter Pincode"
                                     class="form-control" name="Pincode"
                                     #Pincode="ngModel"
-                                    required
+                                    required   pattern="[0-9]{6}" maxlength="6"
                                     [(ngModel)]="placeOrderObject.DeliveryPinCode"
                                     [ngClass]="{'border-danger': Pincode.invalid && (Pincode.touched || Pincode.dirty)}">
                                 <div class="validation-error"
                                     *ngIf="Pincode.touched || Pincode.dirty">
+                                    <!-- Pattern error message -->
+                                    <div *ngIf="Pincode?.errors?.['pattern'] || Pincode?.errors?.['maxLength'] > 6">
+                                        Please enter a valid 6-digit numeric
+                                        pincode.
+                                    </div>
                                     <span
                                         *ngIf="Pincode.errors?.['required']">Pincode
                                         is required </span>
@@ -178,3 +183,5 @@
         </div>
     </form>
 </div>
+
+<app-customer-cart></app-customer-cart>

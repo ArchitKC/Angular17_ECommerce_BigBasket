@@ -5,11 +5,13 @@ import { ProductService } from '../../../services/product/product.service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
+import { CustomerCartComponent } from '../customer-cart/customer-cart.component';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
   imports: [
+    CustomerCartComponent,
     CommonModule,
     RouterOutlet,
     RouterLink,
@@ -48,7 +50,6 @@ export class CheckoutComponent {
     }, (err: any) => {
       this.toastr.error(err.message ? err.message : "An error occurred while retrieving cart items. Please try again later.");
     });
-
   }
 
   placeCartOrder(placeOrderForm: NgForm) {
